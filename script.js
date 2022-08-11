@@ -1,5 +1,8 @@
+var a = 0
 
 var i= false
+
+var jogadorx = []
 
 let elemento = document.getElementById("principal")
 
@@ -10,19 +13,24 @@ elemento.addEventListener("click",(m) =>
 { 
     let local = m.target
 
-    console.log(local)
+    let idLocal  = parseInt(m.target.id)
+    
+     
 
     if(!i)
     {
     
-    local.innerHTML = '<img src="./images/download (1).png>"'
+    local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
 
     i = true
 
+    vencedor(idLocal)
+
     }
     else{
-        console.log("teste1")
+        local.innerHTML = "<img src='./images/pngegg (2).png' class='estiloX'></img>"
         i = false
+
 
     }
 
@@ -30,7 +38,24 @@ elemento.addEventListener("click",(m) =>
 })
 
 
-function colocarDesenho(){
+function vencedor(idLocal){
 
-    console.log("asasasas")
+jogadorx.push(idLocal)
+
+let vitoria1 = [1,5,9]
+
+
+
+if(jogadorx === vitoria1)
+{
+
+
+alert("Vencedor e o x")
+
+}
+
+console.log(vitoria1)
+console.log(jogadorx)
+
+
 }
