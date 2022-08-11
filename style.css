@@ -1,0 +1,20 @@
+
+main{height: 450px;
+        width: 450px;
+        display: grid;
+        grid-template: auto /auto auto auto;
+        grid-gap: 6px;
+        margin: auto;
+        margin-top: 100px ;
+        }
+
+h1{text-align: center;
+    font-style: italic;
+    font-weight: bolder;}
+
+
+.estiloJogo{height: 150px;
+                width: 150px;
+                background-color: rgb(253, 238, 222);
+                border-style: solid;
+                border-width: 1px ;}
