@@ -12,20 +12,27 @@ console.log(elemento)
 elemento.addEventListener("click",(m) => 
 { 
     let local = m.target
-
+    
     let idLocal  = m.target.id
     
-    console.log(idLocal)
+    console.log(local)
      
 
     if(!i)
     {
-    
-        local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
+        if("<main id='principal'>" == local)
+        {
+            alert("Aperte no local correto")
 
-        i = true
+        }
+        else{
+        
+            local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
 
-        vitoria = true
+            i = true
+
+            vitoria = "x"
+        }
 
     }
     else{
@@ -34,15 +41,15 @@ elemento.addEventListener("click",(m) =>
         
         i = false
 
-        vitoria = false
+        vitoria = "o"
     
     }
 
-    vencedor(vitoria, idLocal)
+    vencedor(vitoria, idLocal, local)
 })
 
 
-function vencedor(vitorioso, idLocal){
+function vencedor(vitorioso, idLocal,local){
 
 jogadorx[idLocal] = vitorioso
 
@@ -65,14 +72,17 @@ for (a=0; a<vitoria.length; a++)
     if(jogadorx[pos1] == jogadorx[pos2] && jogadorx[pos1] == jogadorx[pos3])
     {
         let vencedorFinal = jogadorx[pos1]
-        console.log(vencedorFinal)
+        //console.log(local)
 
-        if(vencedorFinal == true)
+        if(vencedorFinal == "x")
         {
+            console.log(local)
+            local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
             alert("O jogador 1 foi o vencedor")
         }        
-        else if (vencedor == false)
+        else if(vencedorFinal === "o")
         {
+            local.innerHTML = "<img src='./images/pngegg (2).png' class='estiloX'></img>"
             alert("O jogador 2 foi o vencedor")
         }
 
