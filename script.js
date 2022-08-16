@@ -14,42 +14,46 @@ elemento.addEventListener("click",(m) =>
     let local = m.target
     
     let idLocal  = m.target.id
-    
-    console.log(local)
-     
 
-    if(!i)
+    console.log(idLocal)
+    
+    if(idLocal !== "principal")
     {
-        if("<main id='principal'>" == local)
+
+        if(!i)
         {
-            alert("Aperte no local correto")
+            if("<main id='principal'>" == local)
+            {
+                alert("Aperte no local correto")
+
+            }
+            else{
+            
+                local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
+
+                i = true
+
+                vitoria = "x"
+            }
 
         }
         else{
+            
+            local.innerHTML = "<img src='./images/pngegg (2).png' class='estiloX'></img>"
+            
+            i = false
+
+            vitoria = "o"
         
-            local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
-
-            i = true
-
-            vitoria = "x"
         }
 
     }
-    else{
-        
-        local.innerHTML = "<img src='./images/pngegg (2).png' class='estiloX'></img>"
-        
-        i = false
 
-        vitoria = "o"
-    
-    }
-
-    vencedor(vitoria, idLocal, local)
+    vencedor(vitoria, idLocal)
 })
 
 
-function vencedor(vitorioso, idLocal,local){
+function vencedor(vitorioso, idLocal){
 
 jogadorx[idLocal] = vitorioso
 
@@ -66,7 +70,7 @@ for (a=0; a<vitoria.length; a++)
      let pos2 = sequencia[1]
      let pos3 = sequencia[2]    
 
-     console.log(jogadorx)
+     //console.log(jogadorx)
     //  console.log(sequencia)
 
     if(jogadorx[pos1] == jogadorx[pos2] && jogadorx[pos1] == jogadorx[pos3])
@@ -76,14 +80,11 @@ for (a=0; a<vitoria.length; a++)
 
         if(vencedorFinal == "x")
         {
-            console.log(local)
-            local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
-            alert("O jogador 1 foi o vencedor")
+            setTimeout( ()=> {alert("O jogador 1 foi o vencedor")},100)
         }        
         else if(vencedorFinal === "o")
         {
-            local.innerHTML = "<img src='./images/pngegg (2).png' class='estiloX'></img>"
-            alert("O jogador 2 foi o vencedor")
+            setTimeout( ()=> {alert("O jogador 2 foi o vencedor")},100)
         }
 
     }
