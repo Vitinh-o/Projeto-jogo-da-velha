@@ -23,3 +23,19 @@ h1{text-align: center;
 .estiloX{/*margin-top: 10px;
             margin-left: 10px;*/
             padding: 25px;}
+
+.estiloBotao{background-color: green;
+                color: white;
+                padding: 15px;
+                border-style: none;
+                border-radius: 15px;
+                transition-property: background-color;
+                transition-duration: 0.5s;}
+
+.estiloBotao:hover{background-color: rgb(19, 209, 19);}
+
+
+
+
+
+

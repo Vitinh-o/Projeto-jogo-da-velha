@@ -4,10 +4,11 @@ var i= false
  
 var jogadorx = [" "," "," "," "," "," "," "," "," "]
 
+var continuar = true
+
 let elemento = document.getElementById("principal")
 
 
-console.log(elemento)
 
 elemento.addEventListener("click",(m) => 
 { 
@@ -15,9 +16,10 @@ elemento.addEventListener("click",(m) =>
     
     let idLocal  = m.target.id
 
-    console.log(idLocal)
-    
-    if(idLocal !== "principal")
+    //console.log(idLocal)
+    console.log(continuar)
+
+    if(idLocal !== "principal" && continuar == true)
     {
 
         if(!i)
@@ -25,7 +27,6 @@ elemento.addEventListener("click",(m) =>
             if("<main id='principal'>" == local)
             {
                 alert("Aperte no local correto")
-
             }
             else{
             
@@ -65,33 +66,29 @@ for (a=0; a<vitoria.length; a++)
 {
      let sequencia = vitoria[a] 
 
-
      let pos1 = sequencia[0]
      let pos2 = sequencia[1]
      let pos3 = sequencia[2]    
 
-     //console.log(jogadorx)
-    //  console.log(sequencia)
-
-    if(jogadorx[pos1] == jogadorx[pos2] && jogadorx[pos1] == jogadorx[pos3])
+    if(jogadorx[pos1] == jogadorx[pos2] && jogadorx[pos1] == jogadorx[pos3] && continuar == true)
     {
         let vencedorFinal = jogadorx[pos1]
-        //console.log(local)
 
         if(vencedorFinal == "x")
         {
             setTimeout( ()=> {alert("O jogador 1 foi o vencedor")},100)
+            continuar = false
         }        
         else if(vencedorFinal === "o")
         {
             setTimeout( ()=> {alert("O jogador 2 foi o vencedor")},100)
+            continuar = false
         }
 
     }
 }
+}
 
-//console.log(vitoria1)
-//console.log(jogadorx)
-
-
+function resetaPg(){
+    window.location.reload()
 }
