@@ -84,7 +84,8 @@ for (a=0; a<vitoria.length; a++)
             setTimeout( ()=> {alert("O jogador 2 foi o vencedor")},100)
             continuar = false
         }
-
+        
+        
     }
 }
 }
