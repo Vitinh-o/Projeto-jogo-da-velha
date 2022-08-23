@@ -19,12 +19,12 @@ h1{font-style: italic;
                 border-width: 1px ;}
 
 
-.estiloX{/*margin-top: 10px;
-            margin-left: 10px;*/
-            padding: 25px;}
+.estiloX{padding: 25px;}
 
 .estiloBotao{background-color: green;
                 color: white;
+                height: 50px;
+                width: 150px;
                 padding: 15px;
                 border-style: none;
                 border-radius: 15px;
@@ -35,20 +35,6 @@ h1{font-style: italic;
 
 footer{text-align: center;}
 
-/*@media screen and (max-width: 510px) {
-    
-    .main{height: 300px;
-            width: 300px;
-            grid-gap: none;}
 
-    .estiloJogo{width: 100px;
-                    height: 100px;}
-
-    .estiloX{/*margin-top: 10px;
-                margin-left: 10px;
-                padding: 0px;}
-    
-
-} */
 
 

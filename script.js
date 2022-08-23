@@ -1,3 +1,5 @@
+// Principais variaveis utilizadas
+
 var a = 0
 var i= false
 var jogadorx = [" "," "," "," "," "," "," "," "," "]
@@ -5,40 +7,28 @@ var continuar = true
 let elemento = document.getElementById("principal")
 
 
+// Pega o clique do usuario e define o jogador
 
-elemento.addEventListener("click",(m) => 
+elemento.addEventListener("click",(alvo) => 
 { 
-    let local = m.target
-    let idLocal  = m.target.id
-
-    //console.log(idLocal)
-    console.log(continuar)
+    let local = alvo.target
+    let idLocal  = alvo.target.id
 
     if(idLocal !== "principal" && continuar == true)
     {
 
-        if(!i)
-        {
-            if("<main id='principal'>" == local)
-            {
-                alert("Aperte no local correto")
-            }
-            else{
+        if(!i &&  " " == jogadorx[idLocal])  {
             
-                local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
+            local.innerHTML = "<img src='./images/pngegg.png' class='estiloX'></img>"
+            i = true
 
-                i = true
-
-                vitoria = "x"
-            }
-
+            vitoria = "x"
         }
-        else{
+        else if(" " == jogadorx[idLocal]){
             
             local.innerHTML = "<img src='./images/pngegg (2).png' class='estiloX'></img>"
             
             i = false
-
             vitoria = "o"
         
         }
@@ -48,6 +38,8 @@ elemento.addEventListener("click",(m) =>
     vencedor(vitoria, idLocal)
 })  
 
+
+//Verifique que foi o vencedor ou se deu velha
 
 function vencedor(vitorioso, idLocal){
 
@@ -84,20 +76,21 @@ function vencedor(vitorioso, idLocal){
 
     for(jogadas of jogadorx)
     {
-        if(jogadas != " " )
+        if(jogadas != " " && continuar == true)
         {
             velha.push(jogadas)
-            console.log(velha)
-
             if(velha.length == 9 && continuar == true) 
             {
                 setTimeout( ()=> {alert("O resultado foi velha")},100)
+                continuar = false
             }
         }
     }
 
 
 }
+
+// Recarrga a pagina reniciando o jogo.
 
 function resetaPg(){
     window.location.reload()
